@@ -25,7 +25,7 @@ function openSideBar() {
 }
 
 
-//! agrb ast5dm toggle 3la show w hide aw animate 3la el dipslay lgoz2 el blackPart
+//? agrb ast5dm toggle 3la show w hide aw animate 3la el dipslay lgoz2 el blackPart
 $('.crossIcon').click(function () {
     $('.loadingAnimation').css('z-index', '1')      //3shan el navbar yb2a fo2 el loading animation
 
@@ -39,13 +39,17 @@ $('.crossIcon').click(function () {
 
 
 
-//? li shows whatever clicked
+//? Shows the section related to the li clicked
 $('li').click(function () {
-    $('body').children().not('navBar').not('.loadingAnimation').addClass('d-none').removeClass('d-block')
-    let lis = document.getElementsByTagName('input')           //Empty all the inputs
+    $('body').children().not('navBar').not('.loadingAnimation').addClass('d-none').removeClass('d-block') //m3 kol 7aga h5tarha fi el li y2fl koool el scation m3ada el navbar w el loading animation 3shan ysht8l
+
+    //Empty all the inputs
+    let lis = document.getElementsByTagName('input')
     for (let i = 0; i < lis.length; i++) {
         lis[i].value = '';
     }
+    // -----
+
     if (this.innerHTML == $('li')[0].innerHTML) {
         closeSideBar()
         $('searchLi').addClass('d-block').removeClass('d-none')
@@ -80,11 +84,11 @@ $('li').click(function () {
         $('contactUs').addClass('d-block').removeClass('d-none')
     }
 });
+// Navbar ↑↑↑
 
 
 
-
-// Home ↓↓↓                             //TODO a3rd kooooool el meals msh 20 bs 
+// Home ↓↓↓
 async function getHomeMeals(id) {
     let req = await fetch(`https://themealdb.com/api/json/v1/1/search.php?s=`)
     let homeMeals = (await req.json()).meals
@@ -162,7 +166,25 @@ $('#searchByLetter').keyup(async function () {
     $('.loadingAnimation').fadeOut(100)
 
     if (data != null) {
-        displayMeals(data, 'innerSearch')
+
+        let temp = ''
+
+        for (let i = 0; i < data.length; i++) {
+            temp += `<div class="col-md-3 ">
+        <div mealId=${data[i].idMeal} class="meal h-100 w-100 rounded-3 text-light position-relative overflow-hidden">
+    
+            <img src="${data[i].strMealThumb}" class="w-100" alt="">
+            <div
+                class="layer w-100 d-flex p-2 align-items-center position-absolute start-0  h-100">
+                <h3 class="text-black text-start">${data[i].strMeal}</h3>
+            </div>
+    
+        </div>
+        </div>`
+
+        }
+        document.getElementById("innerSearch").innerHTML = temp
+
         $('innerSearch').removeClass('d-none')
         $('#innerSearch').css('display', 'flex')
     } else {
@@ -343,7 +365,6 @@ function displayIngre(mealIngre) {
     $('searchLi').addClass('d-none').removeClass('d-block')
     $('innerSearch').addClass('d-none').removeClass('d-block')
     $('.loadingAnimation').fadeOut(300)
-    console.log(mealIngre.strSource);
 }
 // area   ↑↑↑
 
