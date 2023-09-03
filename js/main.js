@@ -9,7 +9,7 @@ $(document).ready(async function () {
 function closeSideBar() {
     $('navBar').animate({ left: `-${$('.blackPart').width()}px` }, 500)
     $('.fa-x').addClass('d-none').removeClass('d-block')
-    $('.fa-bars').removeClass('d-none').addClass('d-block')
+    $('.fa-align-justify').removeClass('d-none').addClass('d-block')
     for (let i = 0; i < $('li').length; i++) {
         $('li').eq(i).animate({ top: '200' }, 100, 'swing')
     }
@@ -17,7 +17,7 @@ function closeSideBar() {
 
 function openSideBar() {
     $('navBar').animate({ left: 0 }, 500)
-    $('.fa-bars').addClass('d-none').removeClass('d-block')
+    $('.fa-align-justify').addClass('d-none').removeClass('d-block')
     $('.fa-x').removeClass('d-none').addClass('d-block')
     for (let i = 0; i < $('li').length; i++) {
         $('li').eq(i).animate({ top: '0' }, i * 100, 'linear')
