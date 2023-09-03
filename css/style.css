@@ -5,17 +5,17 @@ body {
 /*   navBar   */
 
 navBar {
-    left: -260px;
+    left: -257px;
     z-index: 10;
     background-color: #0D0D0D;
 }
 
 .blackPart {
-    width: 260px;
+    width: 257px;
 }
 
 .whitePart {
-    width: 70px;
+    width: 66px;
 }
 
 .whitePart i,
