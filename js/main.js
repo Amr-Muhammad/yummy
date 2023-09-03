@@ -1,5 +1,5 @@
 $(document).ready(async function () {
-    await getHomeMeals()
+    await getHomeMeals('home')
     $('.loadingAnimation').fadeOut(2000)
 })
 
@@ -27,14 +27,14 @@ function openSideBar() {
 
 //! agrb ast5dm toggle 3la show w hide aw animate 3la el dipslay lgoz2 el blackPart
 $('.crossIcon').click(function () {
-$('.loadingAnimation').css('z-index','1')      //3shan el navbar yb2a fo2 el loading animation
+    $('.loadingAnimation').css('z-index', '1')      //3shan el navbar yb2a fo2 el loading animation
 
     if ($('navBar').css('left') == '0px') {
         closeSideBar()
     } else {
         openSideBar()
     }
-    
+
 });
 
 
@@ -85,7 +85,7 @@ $('li').click(function () {
 
 
 // Home ↓↓↓                             //TODO a3rd kooooool el meals msh 20 bs 
-async function getHomeMeals() {
+async function getHomeMeals(id) {
     let req = await fetch(`https://themealdb.com/api/json/v1/1/search.php?s=`)
     let homeMeals = (await req.json()).meals
     // displayMeals(homeMeals, 'home')
@@ -104,7 +104,7 @@ async function getHomeMeals() {
     </div>`
 
     }
-    document.getElementById('home').innerHTML = temp
+    document.getElementById(id).innerHTML = temp
     getId()
 }
 // Home ↑↑↑
@@ -117,12 +117,18 @@ $('#searchByName').keyup(async function () {
     let req = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${$('#searchByName')[0].value}`)
     let data = (await req.json()).meals
 
-
     if (data != null) {
         // $(document).ready(function(){
 
         $('.loadingAnimation').fadeIn()
-        displayMeals(data, 'innerSearch')
+        if ($('#searchByName')[0].value == "") {
+            getHomeMeals('innerSearch')
+
+        } else {
+
+            displayMeals(data, 'innerSearch')
+        }
+
         $('innerSearch').removeClass('d-none')
         $('#innerSearch').css('display', 'flex')
         $('.loadingAnimation').fadeOut(100)
