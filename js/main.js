@@ -5,7 +5,7 @@ $(document).ready(async function () {
 
 
 
-// Navbar ↓↓↓
+// Navbar   ↓↓↓
 function closeSideBar() {
     $('navBar').animate({ left: `-${$('.blackPart').width()}px` }, 500)
     $('.fa-x').addClass('d-none').removeClass('d-block')
@@ -84,11 +84,11 @@ $('li').click(function () {
         $('contactUs').addClass('d-block').removeClass('d-none')
     }
 });
-// Navbar ↑↑↑
+// Navbar   ↑↑↑
 
 
 
-// Home ↓↓↓
+// Home   ↓↓↓
 async function getHomeMeals(id) {
     let req = await fetch(`https://themealdb.com/api/json/v1/1/search.php?s=`)
     let homeMeals = (await req.json()).meals
@@ -111,10 +111,10 @@ async function getHomeMeals(id) {
     document.getElementById(id).innerHTML = temp
     getId()
 }
-// Home ↑↑↑
+// Home   ↑↑↑
 
 
-// Search ↓↓↓
+// Search  ↓↓↓
 $('#searchByName').keyup(async function () {
 
 
@@ -122,25 +122,22 @@ $('#searchByName').keyup(async function () {
     let data = (await req.json()).meals
 
     if (data != null) {
-        // $(document).ready(function(){
 
         $('.loadingAnimation').fadeIn()
-        let temp = ''
 
+        let temp = ''
         for (let i = 0; i < data.length; i++) {
             temp += `<div class="col-md-3 ">
         <div mealId=${data[i].idMeal} class="meal h-100 w-100 rounded-3 text-light position-relative overflow-hidden">
-    
             <img src="${data[i].strMealThumb}" class="w-100" alt="">
             <div
                 class="layer w-100 d-flex p-2 align-items-center position-absolute start-0  h-100">
                 <h3 class="text-black text-start">${data[i].strMeal}</h3>
             </div>
-    
         </div>
         </div>`
-
         }
+        
         document.getElementById("innerSearch").innerHTML = temp
 
         $('innerSearch').removeClass('d-none')
@@ -148,7 +145,6 @@ $('#searchByName').keyup(async function () {
         $('.loadingAnimation').fadeOut(100)
         getId()
 
-        // })
     } else {
         $('#innerSearch').css('display', 'none')
     }
@@ -172,13 +168,11 @@ $('#searchByLetter').keyup(async function () {
         for (let i = 0; i < data.length; i++) {
             temp += `<div class="col-md-3 ">
         <div mealId=${data[i].idMeal} class="meal h-100 w-100 rounded-3 text-light position-relative overflow-hidden">
-    
             <img src="${data[i].strMealThumb}" class="w-100" alt="">
             <div
                 class="layer w-100 d-flex p-2 align-items-center position-absolute start-0  h-100">
                 <h3 class="text-black text-start">${data[i].strMeal}</h3>
             </div>
-    
         </div>
         </div>`
 
@@ -193,7 +187,7 @@ $('#searchByLetter').keyup(async function () {
 
 
 })
-
+// Search  ↑↑↑
 
 
 
@@ -288,7 +282,6 @@ async function getArea(country) {
 
 }
 
-// when click on Country ↓↓↓
 
 function getId() {
     $('.meal').click(function () {
@@ -367,7 +360,6 @@ function displayIngre(mealIngre) {
     $('.loadingAnimation').fadeOut(300)
 }
 // area   ↑↑↑
-
 
 
 
@@ -451,8 +443,8 @@ function displayMeals(data, id) {
 }
 
 
-//  Regex   ↓↓↓
 
+//  Regex   ↓↓↓
 function checkName() {
     let nameRegex = /^[a-zA-z ]+$/
     return nameRegex.test($('#name').siblings()[0].value)
@@ -565,7 +557,7 @@ function checkRepassword() {
 }
 
 $('#repassword').siblings().keyup(checkRepassword)
-
+//  Regex   ↑↑↑
 
 
 // check submit BTN
