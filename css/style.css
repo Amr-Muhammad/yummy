@@ -1,0 +1,194 @@
+body {
+    background-color: #0D0D0D;
+}
+
+/*   navBar   */
+
+navBar {
+    left: -240px;
+    z-index: 10;
+}
+
+.blackPart {
+    width: 240px;
+}
+
+.whitePart {
+    width: 60px;
+}
+
+.whitePart i,
+.lowerPart i {
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+.upperPart{
+    overflow: hidden;
+}
+
+ul li{
+position: relative;
+top: 200px;
+transition: all 1s;
+} 
+
+
+.fs-7 {
+    font-size: 14px;
+}
+
+/* li{
+    visibility: hidden;
+} */
+
+li {
+    cursor: pointer;
+}
+
+
+
+
+
+/* Search */
+
+searchLi ::placeholder {
+    color: gray !important;
+}
+
+searchLi input {
+color: white !important;
+}
+
+
+/* Categories */
+.layer {
+    background-color: rgba(255, 255, 255, 0.7);
+    top: 100%;
+    transition: all 0.5s;
+}
+
+.meal {
+    cursor: pointer;
+}
+
+.meal:hover .layer {
+    top: 0;
+}
+
+
+
+
+
+/* Area */
+@media (min-width:1400px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+        max-width: 1200px;
+    }
+}
+
+.area {
+    cursor: pointer;
+}
+
+
+
+ingredient a:first-of-type {
+    transition: all 0.3s;
+}
+
+ingredient a:last-of-type {
+    transition: all 0.3s;
+}
+
+
+/* Ingredient */
+
+ingredient a:first-of-type:hover {
+    background-color: rgb(1, 97, 1) !important;
+}
+
+ingredient a:nth-of-type(2):hover {
+    background-color: rgb(138, 4, 4) !important;
+}
+
+
+
+
+input::placeholder {
+    font-size: 14px;
+}
+
+
+
+
+
+
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50;
+    animation: rotate 1s linear infinite;
+}
+
+.loader::before,
+.loader::after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    inset: 0px;
+    border-radius: 50%;
+    border: 5px solid #FFF;
+    animation: prixClipFix 2s linear infinite;
+}
+
+.loader::after {
+    transform: rotate3d(90, 90, 0, 180deg);
+    border-color: #FF3D00;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes prixClipFix {
+    0% {
+        clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0)
+    }
+
+    50% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0)
+    }
+
+    75%,
+    100% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%)
+    }
+}
+
+.loadingAnimation {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 1);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 5;
+}

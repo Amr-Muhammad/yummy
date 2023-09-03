@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yummy</title>
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="loadingAnimation">
+        <span class="loader fa-10x start-50 top-50 "></span>
+    </div>
+
+    <home>
+        <div class="container fs-7 py-5">
+            <div id="home" class="row g-3 text-center">
+
+
+
+            </div>
+        </div>
+    </home>
+
+    <navBar class="d-flex text-light position-fixed top-0 bottom-0 bg-black fs-7">
+
+        <div class="blackPart d-flex flex-column justify-content-between">
+
+            <div class="upperPart">
+
+                <ul class="ulAnimate my-4 text-decoration-none px-4">
+                    <li class="t1 py-2">Search</li>
+                    <li class="t2 py-2">Categories</li>
+                    <li class="t3 py-2">Area</li>
+                    <li class="t4 py-2">Ingredients</li>
+                    <li class="t5 py-2">Contact Us</li>
+                </ul>
+
+            </div>
+
+            <div class="lowerPart px-4 mb-3">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-solid fa-globe"></i>
+                <p>Copyright Â© 2019 All Rights
+                    Reserved.</p>
+            </div>
+
+        </div>
+
+        <div class="whitePart bg-white">
+
+            <div class="d-flex py-5 flex-column justify-content-between align-items-center h-100">
+                <img src="images/logo.png" class="w-75" alt="">
+                <i class="crossIcon d-none fa-solid fa-x text-black fa-2x"></i>
+                <i class="crossIcon d-block fa-solid fa-bars text-black fa-2x"></i>
+                <div class="icons d-flex flex-column">
+                    <i class="fa-solid fa-globe text-black fa-1x mb-1"></i>
+                    <i class="fa-solid fa-share-nodes text-black fa-1x"></i>
+                </div>
+            </div>
+
+        </div>
+
+    </navBar>
+
+
+    <searchLi class="d-none">
+
+        <div class="container py-5">
+            <form action="">
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <input id="searchByName" placeholder="Search By Name" type="text"
+                            class="bg-transparent form-control">
+                    </div>
+
+                    <div class="col-md-6">
+                        <input id="searchByLetter" maxlength="1" placeholder="Search By First Letter" type="text"
+                            class="bg-transparent form-control">
+                    </div>
+
+            </form>
+        </div>
+        </div>
+
+    </searchLi>
+
+    <innerSearch class="d-none">
+
+        <div class="container">
+            <div id="innerSearch" class="row g-4">
+            </div>
+        </div>
+
+    </innerSearch>
+
+    <categoriesLi class="d-none">
+
+        <div class="container"> <!--   TODO     3ayzen n8yr bo3d el container -->
+            <div id="categories" class="row py-5 g-4">
+
+            </div>
+        </div>
+
+    </categoriesLi>
+
+    <innerCategories class="d-none">
+        <div class="container fs-7 py-5">
+            <div id="innerCategories" class="row g-3 text-center">
+
+
+            </div>
+        </div>
+    </innerCategories>
+
+    <areaLi class="d-none">
+        <div class="container fs-7 py-5">
+            <div id="area" class="row g-3 text-center">
+
+
+            </div>
+        </div>
+    </areaLi>
+
+    <innerArea class="d-none text-white py-5">
+        <div class="container">
+            <div id="ingredient" class="row">
+                <!-- 
+                <div class="col-md-4">
+                    <div>
+                        <img src="https://www.themealdb.com/images/media/meals/sywswr1511383814.jpg"
+                            class="w-100 rounded-3" alt="">
+                        <h3>Banana Pancakes</h3>
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <h3>Instructions</h3>
+                    <p class="fs-7">In a bowl, mash the banana with a fork until it resembles a thick purée. Stir in the
+                        eggs, baking
+                        powder and vanilla. Heat a large non-stick frying pan or pancake pan over a medium heat and
+                        brush with half the oil. Using half the batter, spoon two pancakes into the pan, cook for 1-2
+                        mins each side, then tip onto a plate. Repeat the process with the remaining oil and batter. Top
+                        the pancakes with the pecans and raspberries.</p>
+                    <h3>Area : American</h3>
+                    <h3>Category : Dessert</h3>
+                    <h4 class="mb-3">Recipes :</h4>
+
+                    <div id="recipes " class="ms-2 mb-4 d-flex flex-wrap gap-3">
+                        <span class="fs-7 bg-info-subtle px-2 py-1 rounded-2 text-success-emphasis">1 large
+                            Banana</span>
+
+                    </div>
+
+                    <h4 class="mb-3">Tags :</h4>
+                    <div id="tags" class="ms-2 mb-4 d-flex flex-wrap gap-3">
+                    <p class="fs-7 d-inline-block bg-danger-subtle px-2 py-1 rounded-2 text-danger-emphasis">1 large
+                        Banana</p>
+                    <p class="fs-7 d-inline-block bg-danger-subtle px-2 py-1 rounded-2 text-danger-emphasis">1 large
+                        Banana</p>
+                    <p class="fs-7 d-inline-block bg-danger-subtle px-2 py-1 rounded-2 text-danger-emphasis">1 large
+                        Banana</p>
+                    <p class="fs-7 d-inline-block bg-danger-subtle px-2 py-1 rounded-2 text-danger-emphasis">1 large
+                        Banana</p>
+                    <p class="fs-7 d-inline-block bg-danger-subtle px-2 py-1 rounded-2 text-danger-emphasis">1 large
+                        Banana</p>
+                    <p class="fs-7 d-inline-block bg-danger-subtle px-2 py-1 rounded-2 text-danger-emphasis">1 large
+                        Banana</p>
+                    <p class="fs-7 d-inline-block bg-danger-subtle px-2 py-1 rounded-2 text-danger-emphasis">1 large
+                        Banana</p>
+                    <p class="fs-7 d-inline-block bg-danger-subtle px-2 py-1 rounded-2 text-danger-emphasis">1 large
+                        Banana</p>
+                    </div>
+                    <div class="py-5">
+                        <a href=""
+                            class="text-decoration-none text-white px-3 py-2 bg-success rounded-2 fs-7">Source</a>
+                        <a href=""
+                            class="text-decoration-none text-white px-3 py-2 bg-danger rounded-2 fs-7">Youtube</a>
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+    </innerArea>
+
+    <ingredientLi class="d-none">
+        <div class="container text-light fs-7 py-5">
+            <div id="ingredientLI" class="row g-4 text-center">
+
+
+
+            </div>
+        </div>
+    </ingredientLi>
+
+    <innerIngredient class="d-none">
+        <div class="container text-light fs-7 py-5">
+            <div id="innerIngredient" class="row g-4 text-center">
+
+
+
+            </div>
+        </div>
+    </innerIngredient>
+
+    <contactUs class="d-none">
+        <div class="container vh-100 d-flex align-items-center justify-content-center">
+            <form action="">
+
+                <div class="row g-4 justify-content-center text-center">
+
+                    <div class="col-md-5">
+                        <input type="text" class="form-control" placeholder="Enter Your Name">
+
+                        <div id="name"
+                            class="d-none bg-danger-subtle px-5 py-2 rounded-3 mt-2 d-flex justify-content-center align-items-center">
+                            <p class="p-2 m-0 text-danger-emphasis fs-7">Special characters and numbers not allowed
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-5">
+                        <input type="text" class="form-control" placeholder="Enter Your Email">
+
+                        <div id="email"
+                            class="d-none bg-danger-subtle px-5 py-2 rounded-3 mt-2 d-flex justify-content-center align-items-center">
+                            <p class="p-2 m-0 text-danger-emphasis fs-7">Email not valid *exemple@yyy.zzz</p>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-5">
+                        <input type="text" class="form-control" placeholder="Enter Your Phone">
+
+                        <div id="phone"
+                            class="d-none bg-danger-subtle px-5 py-2 rounded-3 mt-2 d-flex justify-content-center align-items-center">
+                            <p class="p-2 m-0 text-danger-emphasis fs-7">Enter valid Phone Number</p>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-5">
+                        <input type="number" class="form-control" placeholder="Enter Your Age">
+
+                        <div id="age"
+                            class="d-none bg-danger-subtle px-5 py-2 rounded-3 mt-2 d-flex justify-content-center align-items-center">
+                            <p class="p-2 m-0 text-danger-emphasis fs-7">Enter valid age</p>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-5">
+                        <input type="password" class="form-control" placeholder="Enter Your Password">
+
+                        <div id="password"
+                            class="d-none bg-danger-subtle px-5 py-2 rounded-3 mt-2 d-flex justify-content-center align-items-center">
+                            <p class="p-2 m-0 text-danger-emphasis fs-7">Enter valid password *Minimum eight
+                                characters,
+                                at least one letter
+                                and one number:*</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5">
+                        <input type="password" class="form-control" placeholder="Repassword">
+
+                        <div id="repassword"
+                            class="d-none bg-danger-subtle px-5 py-2 rounded-3 mt-2 d-flex justify-content-center align-items-center">
+                            <p class="p-2 m-0 text-danger-emphasis fs-7">Enter valid repassword</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-center mt-3">
+                    <button type="button" disabled class="submitBtn btn btn-outline-danger">Submit</button>
+                </div>
+
+            </form>
+        </div>
+    </contactUs>
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
