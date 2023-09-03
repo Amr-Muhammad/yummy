@@ -121,13 +121,23 @@ $('#searchByName').keyup(async function () {
         // $(document).ready(function(){
 
         $('.loadingAnimation').fadeIn()
-        if ($('#searchByName')[0].value == "") {
-            getHomeMeals('innerSearch')
+        let temp = ''
 
-        } else {
+        for (let i = 0; i < data.length; i++) {
+            temp += `<div class="col-md-3 ">
+        <div mealId=${data[i].idMeal} class="meal h-100 w-100 rounded-3 text-light position-relative overflow-hidden">
+    
+            <img src="${data[i].strMealThumb}" class="w-100" alt="">
+            <div
+                class="layer w-100 d-flex p-2 align-items-center position-absolute start-0  h-100">
+                <h3 class="text-black text-start">${data[i].strMeal}</h3>
+            </div>
+    
+        </div>
+        </div>`
 
-            displayMeals(data, 'innerSearch')
         }
+        document.getElementById("innerSearch").innerHTML = temp
 
         $('innerSearch').removeClass('d-none')
         $('#innerSearch').css('display', 'flex')
@@ -320,8 +330,8 @@ function displayIngre(mealIngre) {
             <div id="tags" class="ms-2 mb-4 d-flex flex-wrap gap-3">
                ${tags}
             </div>
-            <a href="${mealIngre.strSource}" class="text-decoration-none text-white px-3 py-2 bg-success rounded-2">Source</a>
-            <a href="${mealIngre.strYoutube}" class="text-decoration-none text-white px-3 py-2 bg-danger rounded-2">Youtube</a>
+            <a href="${mealIngre.strSource}" target="_blank" class="text-decoration-none text-white px-3 py-2 bg-success rounded-2">Source</a>
+            <a href="${mealIngre.strYoutube}" target="_blank" class="text-decoration-none text-white px-3 py-2 bg-danger rounded-2">Youtube</a>
         </div >`
 
     document.getElementById('ingredient').innerHTML = temp
@@ -333,7 +343,7 @@ function displayIngre(mealIngre) {
     $('searchLi').addClass('d-none').removeClass('d-block')
     $('innerSearch').addClass('d-none').removeClass('d-block')
     $('.loadingAnimation').fadeOut(300)
-
+    console.log(mealIngre.strSource);
 }
 // area   ↑↑↑
 
