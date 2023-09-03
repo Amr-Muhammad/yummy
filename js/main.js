@@ -27,14 +27,14 @@ function openSideBar() {
 
 //! agrb ast5dm toggle 3la show w hide aw animate 3la el dipslay lgoz2 el blackPart
 $('.crossIcon').click(function () {
-$('.loadingAnimation').css('z-index','1')
+$('.loadingAnimation').css('z-index','1')      //3shan el navbar yb2a fo2 el loading animation
+
     if ($('navBar').css('left') == '0px') {
         closeSideBar()
-
     } else {
         openSideBar()
-
     }
+    
 });
 
 
