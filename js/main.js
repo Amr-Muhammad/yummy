@@ -181,6 +181,7 @@ $('#searchByLetter').keyup(async function () {
 
         $('innerSearch').removeClass('d-none')
         $('#innerSearch').css('display', 'flex')
+        getId()
     } else {
         $('#innerSearch').css('display', 'none')
     }
