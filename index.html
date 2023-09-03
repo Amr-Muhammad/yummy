@@ -14,12 +14,18 @@
 <body>
 
     <div class="loadingAnimation">
-        <span class="loader fa-10x start-50 top-50 "></span>
+        <!-- <span class="loader fa-10x start-50 top-50  translate-middle"></span> -->
+        <div class="lds-ring fa-10x start-50 top-50 translate-middle">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </div>
 
     <home>
-        <div class="container fs-7 py-5">
-            <div id="home" class="row g-3 text-center">
+        <div class="container py-5">
+            <div id="home" class="row g-4 text-center">
 
 
 
@@ -27,18 +33,18 @@
         </div>
     </home>
 
-    <navBar class="d-flex text-light position-fixed top-0 bottom-0 bg-black fs-7">
+    <navBar class="d-flex text-light position-fixed top-0 bottom-0">
 
         <div class="blackPart d-flex flex-column justify-content-between">
 
             <div class="upperPart">
 
                 <ul class="ulAnimate my-4 text-decoration-none px-4">
-                    <li class="t1 py-2">Search</li>
-                    <li class="t2 py-2">Categories</li>
-                    <li class="t3 py-2">Area</li>
-                    <li class="t4 py-2">Ingredients</li>
-                    <li class="t5 py-2">Contact Us</li>
+                    <li class="py-2">Search</li>
+                    <li class="py-2">Categories</li>
+                    <li class="py-2">Area</li>
+                    <li class="py-2">Ingredients</li>
+                    <li class="py-2">Contact Us</li>
                 </ul>
 
             </div>
@@ -69,10 +75,9 @@
 
     </navBar>
 
-
     <searchLi class="d-none">
 
-        <div class="container py-5">
+        <div class="container py-4">
             <form action="">
                 <div class="row">
 
@@ -112,8 +117,8 @@
     </categoriesLi>
 
     <innerCategories class="d-none">
-        <div class="container fs-7 py-5">
-            <div id="innerCategories" class="row g-3 text-center">
+        <div class="container py-5">
+            <div id="innerCategories" class="row g-4 text-center">
 
 
             </div>
@@ -121,8 +126,8 @@
     </innerCategories>
 
     <areaLi class="d-none">
-        <div class="container fs-7 py-5">
-            <div id="area" class="row g-3 text-center">
+        <div class="container py-5">
+            <div id="area" class="row g-4 text-center">
 
 
             </div>
@@ -131,67 +136,14 @@
 
     <innerArea class="d-none text-white py-5">
         <div class="container">
-            <div id="ingredient" class="row">
-                <!-- 
-                <div class="col-md-4">
-                    <div>
-                        <img src="https://www.themealdb.com/images/media/meals/sywswr1511383814.jpg"
-                            class="w-100 rounded-3" alt="">
-                        <h3>Banana Pancakes</h3>
-                    </div>
-                </div>
-
-                <div class="col-md-8">
-                    <h3>Instructions</h3>
-                    <p class="fs-7">In a bowl, mash the banana with a fork until it resembles a thick purée. Stir in the
-                        eggs, baking
-                        powder and vanilla. Heat a large non-stick frying pan or pancake pan over a medium heat and
-                        brush with half the oil. Using half the batter, spoon two pancakes into the pan, cook for 1-2
-                        mins each side, then tip onto a plate. Repeat the process with the remaining oil and batter. Top
-                        the pancakes with the pecans and raspberries.</p>
-                    <h3>Area : American</h3>
-                    <h3>Category : Dessert</h3>
-                    <h4 class="mb-3">Recipes :</h4>
-
-                    <div id="recipes " class="ms-2 mb-4 d-flex flex-wrap gap-3">
-                        <span class="fs-7 bg-info-subtle px-2 py-1 rounded-2 text-success-emphasis">1 large
-                            Banana</span>
-
-                    </div>
-
-                    <h4 class="mb-3">Tags :</h4>
-                    <div id="tags" class="ms-2 mb-4 d-flex flex-wrap gap-3">
-                    <p class="fs-7 d-inline-block bg-danger-subtle px-2 py-1 rounded-2 text-danger-emphasis">1 large
-                        Banana</p>
-                    <p class="fs-7 d-inline-block bg-danger-subtle px-2 py-1 rounded-2 text-danger-emphasis">1 large
-                        Banana</p>
-                    <p class="fs-7 d-inline-block bg-danger-subtle px-2 py-1 rounded-2 text-danger-emphasis">1 large
-                        Banana</p>
-                    <p class="fs-7 d-inline-block bg-danger-subtle px-2 py-1 rounded-2 text-danger-emphasis">1 large
-                        Banana</p>
-                    <p class="fs-7 d-inline-block bg-danger-subtle px-2 py-1 rounded-2 text-danger-emphasis">1 large
-                        Banana</p>
-                    <p class="fs-7 d-inline-block bg-danger-subtle px-2 py-1 rounded-2 text-danger-emphasis">1 large
-                        Banana</p>
-                    <p class="fs-7 d-inline-block bg-danger-subtle px-2 py-1 rounded-2 text-danger-emphasis">1 large
-                        Banana</p>
-                    <p class="fs-7 d-inline-block bg-danger-subtle px-2 py-1 rounded-2 text-danger-emphasis">1 large
-                        Banana</p>
-                    </div>
-                    <div class="py-5">
-                        <a href=""
-                            class="text-decoration-none text-white px-3 py-2 bg-success rounded-2 fs-7">Source</a>
-                        <a href=""
-                            class="text-decoration-none text-white px-3 py-2 bg-danger rounded-2 fs-7">Youtube</a>
-                    </div>
-                </div> -->
+            <div id="ingredient" class="row g-4">
 
             </div>
         </div>
     </innerArea>
 
     <ingredientLi class="d-none">
-        <div class="container text-light fs-7 py-5">
+        <div class="container text-light py-5">
             <div id="ingredientLI" class="row g-4 text-center">
 
 
@@ -201,7 +153,7 @@
     </ingredientLi>
 
     <innerIngredient class="d-none">
-        <div class="container text-light fs-7 py-5">
+        <div class="container text-light py-5">
             <div id="innerIngredient" class="row g-4 text-center">
 
 
@@ -221,7 +173,7 @@
 
                         <div id="name"
                             class="d-none bg-danger-subtle px-5 py-2 rounded-3 mt-2 d-flex justify-content-center align-items-center">
-                            <p class="p-2 m-0 text-danger-emphasis fs-7">Special characters and numbers not allowed
+                            <p class="p-2 m-0 text-danger-emphasis">Special characters and numbers not allowed
                             </p>
                         </div>
 
@@ -233,7 +185,7 @@
 
                         <div id="email"
                             class="d-none bg-danger-subtle px-5 py-2 rounded-3 mt-2 d-flex justify-content-center align-items-center">
-                            <p class="p-2 m-0 text-danger-emphasis fs-7">Email not valid *exemple@yyy.zzz</p>
+                            <p class="p-2 m-0 text-danger-emphasis">Email not valid *exemple@yyy.zzz</p>
                         </div>
 
                     </div>
@@ -243,7 +195,7 @@
 
                         <div id="phone"
                             class="d-none bg-danger-subtle px-5 py-2 rounded-3 mt-2 d-flex justify-content-center align-items-center">
-                            <p class="p-2 m-0 text-danger-emphasis fs-7">Enter valid Phone Number</p>
+                            <p class="p-2 m-0 text-danger-emphasis">Enter valid Phone Number</p>
                         </div>
 
                     </div>
@@ -253,7 +205,7 @@
 
                         <div id="age"
                             class="d-none bg-danger-subtle px-5 py-2 rounded-3 mt-2 d-flex justify-content-center align-items-center">
-                            <p class="p-2 m-0 text-danger-emphasis fs-7">Enter valid age</p>
+                            <p class="p-2 m-0 text-danger-emphasis">Enter valid age</p>
                         </div>
 
                     </div>
@@ -263,7 +215,7 @@
 
                         <div id="password"
                             class="d-none bg-danger-subtle px-5 py-2 rounded-3 mt-2 d-flex justify-content-center align-items-center">
-                            <p class="p-2 m-0 text-danger-emphasis fs-7">Enter valid password *Minimum eight
+                            <p class="p-2 m-0 text-danger-emphasis">Enter valid password *Minimum eight
                                 characters,
                                 at least one letter
                                 and one number:*</p>
@@ -275,7 +227,7 @@
 
                         <div id="repassword"
                             class="d-none bg-danger-subtle px-5 py-2 rounded-3 mt-2 d-flex justify-content-center align-items-center">
-                            <p class="p-2 m-0 text-danger-emphasis fs-7">Enter valid repassword</p>
+                            <p class="p-2 m-0 text-danger-emphasis">Enter valid repassword</p>
                         </div>
 
                     </div>

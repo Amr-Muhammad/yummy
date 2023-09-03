@@ -1,6 +1,9 @@
-$(document).ready(function () {
+$(document).ready(async function () {
+    await getHomeMeals()
     $('.loadingAnimation').fadeOut(2000)
 })
+
+
 
 // Navbar ↓↓↓
 function closeSideBar() {
@@ -37,7 +40,6 @@ $('.crossIcon').click(function () {
 
 
 //? li shows whatever clicked
-
 $('li').click(function () {
     $('body').children().not('navBar').not('.loadingAnimation').addClass('d-none').removeClass('d-block')
     if (this.innerHTML == $('li')[0].innerHTML) {
@@ -79,12 +81,12 @@ $('li').click(function () {
 
 
 // Home ↓↓↓                             //TODO a3rd kooooool el meals msh 20 bs 
-(async function getHomeMeals() {
+async function getHomeMeals() {
     let req = await fetch(`https://themealdb.com/api/json/v1/1/search.php?s=`)
     let homeMeals = (await req.json()).meals
     displayMeals(homeMeals, 'home')
     getId()
-})();
+}
 // Home ↑↑↑
 
 
@@ -104,6 +106,7 @@ $('#searchByName').keyup(async function () {
         $('innerSearch').removeClass('d-none')
         $('#innerSearch').css('display', 'flex')
         $('.loadingAnimation').fadeOut(100)
+        getId()
 
         // })
     } else {
@@ -255,7 +258,7 @@ function displayIngre(mealIngre) {
     if (mealIngre.strTags) {
         arr = (mealIngre.strTags).split(",")
         for (let i = 0; i < arr.length; i++) {
-            tags += `<span class="fs-7 bg-danger-subtle px-2 py-1 rounded-2 text-danger-emphasis">${arr[i]}</span>`
+            tags += `<span class="bg-danger-subtle px-2 py-1 rounded-2 text-danger-emphasis">${arr[i]}</span>`
         }
     }
 
@@ -264,7 +267,7 @@ function displayIngre(mealIngre) {
         let firstHalfContainer = firstHalf + i
         let secondHalfContainer = secondHalf + i
         if (mealIngre[firstHalfContainer] != '' && mealIngre[firstHalfContainer] != null && mealIngre[firstHalfContainer] != " ") {
-            spanContainer += `<span class="fs-7 bg-info-subtle px-2 py-1 rounded-2 text-success-emphasis">${mealIngre[firstHalfContainer]} ${mealIngre[secondHalfContainer]}</span > `
+            spanContainer += `<span class="bg-info-subtle px-2 py-1 rounded-2 text-success-emphasis">${mealIngre[firstHalfContainer]} ${mealIngre[secondHalfContainer]}</span > `
         }
     }
 
@@ -273,26 +276,26 @@ function displayIngre(mealIngre) {
                 <div>
             <img src="${mealIngre.strMealThumb}"
                 class="w-100 rounded-3" alt="">
-                <h3>${mealIngre.strMeal}</h3>
+                <h2>${mealIngre.strMeal}</h2>
         </div>
         </div>
 
         <div class="col-md-8">
-            <h3>Instructions</h3>
-            <p class="fs-7">${mealIngre.strInstructions}</p>
+            <h2>Instructions</h2>
+            <p class="">${mealIngre.strInstructions}</p>
             <h3>Area : ${mealIngre.strArea}</h3>
             <h3>Category : ${mealIngre.strCategory}</h3>
-            <h4 class="mb-3">Recipes :</h4>
+            <h3 class="mb-3">Recipes :</h3>
             <div id="recipes " class="ms-2 mb-4 d-flex flex-wrap gap-3" >
                 ${spanContainer}
             </div>
 
-            <h4 class="mb-3">Tags :</h4>
+            <h3 class="mb-3">Tags :</h3>
             <div id="tags" class="ms-2 mb-4 d-flex flex-wrap gap-3">
                ${tags}
             </div>
-            <a href="${mealIngre.strSource}" class="text-decoration-none text-white px-3 py-2 bg-success rounded-2 fs-7">Source</a>
-            <a href="${mealIngre.strYoutube}" class="text-decoration-none text-white px-3 py-2 bg-danger rounded-2 fs-7">Youtube</a>
+            <a href="${mealIngre.strSource}" class="text-decoration-none text-white px-3 py-2 bg-success rounded-2">Source</a>
+            <a href="${mealIngre.strYoutube}" class="text-decoration-none text-white px-3 py-2 bg-danger rounded-2">Youtube</a>
         </div >`
 
     document.getElementById('ingredient').innerHTML = temp
@@ -301,6 +304,8 @@ function displayIngre(mealIngre) {
     $('home').removeClass('d-block').addClass('d-none')
     $('innerCategories').addClass('d-none').removeClass('d-block')
     $('innerIngredient').addClass('d-none').removeClass('d-block')
+    $('searchLi').addClass('d-none').removeClass('d-block')
+    $('innerSearch').addClass('d-none').removeClass('d-block')
     $('.loadingAnimation').fadeOut(500)
 
 }
@@ -378,11 +383,11 @@ function displayMeals(data, id) {
         <img src="${data[i].strMealThumb}" class="w-100" alt="">
         <div
             class="layer w-100 d-flex p-2 align-items-center position-absolute start-0  h-100">
-            <h4 class="text-black text-start">${data[i].strMeal}</h4>
+            <h3 class="text-black text-start">${data[i].strMeal}</h3>
         </div>
 
     </div>
-</div>`
+    </div>`
 
     }
     document.getElementById(id).innerHTML = temp
@@ -514,4 +519,9 @@ function test() {
         $('.submitBtn').attr('disabled', 'disabled')
     }
 }
+
+
+
+
+
 
