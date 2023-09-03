@@ -1,3 +1,4 @@
+var flag1, flag2, flag3, flag4, flag5, flag6
 $(document).ready(async function () {
     await getHomeMeals('home')
     $('.loadingAnimation').fadeOut(2000)
@@ -137,7 +138,7 @@ $('#searchByName').keyup(async function () {
         </div>
         </div>`
         }
-        
+
         document.getElementById("innerSearch").innerHTML = temp
 
         $('innerSearch').removeClass('d-none')
@@ -456,10 +457,13 @@ $('#name').siblings().keyup(() => {
         $('#name').addClass('d-none')
         $('#name').removeClass('d-block')
         $('#name').siblings().addClass('is-valid').removeClass('is-invalid')
+        flag1 = true
     } else {
         $('#name').addClass('d-block')
         $('#name').removeClass('d-none')
         $('#name').siblings().addClass('is-invalid').removeClass('is-valid')
+        flag1 = false
+
     }
     test()
 })
@@ -475,10 +479,13 @@ $('#email').siblings().keyup(() => {
         $('#email').addClass('d-none')
         $('#email').removeClass('d-block')
         $('#email').siblings().addClass('is-valid').removeClass('is-invalid')
+        flag2 = true
     } else {
         $('#email').addClass('d-block')
         $('#email').removeClass('d-none')
         $('#email').siblings().addClass('is-invalid').removeClass('is-valid')
+        flag2 = false
+
     }
     test()
 })
@@ -495,10 +502,13 @@ $('#phone').siblings().keyup(() => {
         $('#phone').addClass('d-none')
         $('#phone').removeClass('d-block')
         $('#phone').siblings().addClass('is-valid').removeClass('is-invalid')
+        flag3 = true
     } else {
         $('#phone').addClass('d-block')
         $('#phone').removeClass('d-none')
         $('#phone').siblings().addClass('is-invalid').removeClass('is-valid')
+        flag3 = false
+
     }
     test()
 })
@@ -514,10 +524,13 @@ $('#age').siblings().keyup(() => {
         $('#age').addClass('d-none')
         $('#age').removeClass('d-block')
         $('#age').siblings().addClass('is-valid').removeClass('is-invalid')
+        flag4 = true
     } else {
         $('#age').addClass('d-block')
         $('#age').removeClass('d-none')
         $('#age').siblings().addClass('is-invalid').removeClass('is-valid')
+        flag4 = false
+
     }
     test()
 })
@@ -533,10 +546,13 @@ $('#password').siblings().keyup(() => {
         $('#password').addClass('d-none')
         $('#password').removeClass('d-block')
         $('#password').siblings().addClass('is-valid').removeClass('is-invalid')
+        flag5 = true
     } else {
         $('#password').addClass('d-block')
         $('#password').removeClass('d-none')
         $('#password').siblings().addClass('is-invalid').removeClass('is-valid')
+        flag5 = false
+
     }
     test()
     checkRepassword() //3shan lw el repassword kan 3amel match wna 8yrt el password el repassword ta5od balha wtt2sr brdo
@@ -548,11 +564,14 @@ function checkRepassword() {
         $('#repassword').addClass('d-none')
         $('#repassword').removeClass('d-block')
         $('#repassword').siblings().addClass('is-valid').removeClass('is-invalid')
+        flag6 = true
     }
     else {
         $('#repassword').addClass('d-block')
         $('#repassword').removeClass('d-none')
         $('#repassword').siblings().addClass('is-invalid').removeClass('is-valid')
+        flag6 = false
+
     }
     test()
 }
@@ -563,7 +582,7 @@ $('#repassword').siblings().keyup(checkRepassword)
 
 // check submit BTN
 function test() {
-    if (checkName() == true && checkEmail() == true && checkPhone() == true && checkAge() == true && checkPassword() == true && checkRepassword() == true) {
+    if (flag1 == true && flag2 == true && flag3 == true && flag4 == true && flag5 == true && flag6 == true) {
         $('.submitBtn').removeAttr('disabled')
     } else {
         $('.submitBtn').attr('disabled', 'disabled')
